@@ -1,8 +1,11 @@
-import Footer from "./layouts/Footer";
-import Header from "./layouts/Header";
-import Services from "./layouts/Services";
-import Testimonials from "./layouts/Testimonials";
-import Welcome from "./layouts/Welcome";
+import Blogs from "./components/layouts/Blogs";
+import Contacts from "./components/layouts/Contacts";
+import Footer from "./components/layouts/Footer";
+import Header from "./components/layouts/Header";
+import Projects from "./components/layouts/Projects";
+import Services from "./components/layouts/Services";
+import Testimonials from "./components/layouts/Testimonials";
+import Welcome from "./components/layouts/Welcome";
 
 function App() {
   return (
@@ -10,7 +13,10 @@ function App() {
       <Header />
       <Welcome />
       <Services />
+      {/* <Blogs />
+      <Projects /> */}
       <Testimonials />
+      {/* <Contacts /> */}
       <Footer />
     </div>
   );

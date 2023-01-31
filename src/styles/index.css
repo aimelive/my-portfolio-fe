@@ -4,18 +4,18 @@
 @tailwind components;
 @tailwind utilities;
 
-/* body {
-  background-image: url("../assets/images/aime.png");
+body {
+  background-image: url("../../public/bg-pattern.svg");
   background-repeat: no-repeat;
   background-size: 800px;
-  background-position: 90% - 25%;
+  background-position: 90% -28%;
 }
 @media (min-width: 576px) {
   body {
-    background-position: 50px -50px;
-    background-size: 500px;
+    background-position: 120% -150px;
+    background-size: 600px;
   }
-} */
+}
 
 .hamburger {
   cursor: pointer;

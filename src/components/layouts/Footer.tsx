@@ -1,4 +1,17 @@
-import testimony from "../assets/images/testimony.png";
+import testimony from "../../assets/images/aime.png";
+import logo from "../../assets/images/logo_white.png";
+import {
+  FaFacebook,
+  FaGithub,
+  FaGoogle,
+  FaInstagram,
+  FaLinkedin,
+  FaLinkedinIn,
+  FaMeetup,
+  FaRProject,
+  FaTwitter,
+  FaVoicemail,
+} from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -9,23 +22,23 @@ const Footer = () => {
             Copright &copy; 2023, All Rights Reserved
           </div>
           <div>
-            <img src="" className="h-8" alt="AimeliveLogo" />
+            <img src={logo} className="h-8" alt="Aimelive Logo" />
           </div>
-          <div className="flex justify-center space-x-4">
+          <div className="flex justify-center space-x-4 text-white">
             <a href="/#">
-              <img src={testimony} alt="Facebbok" className="h-8" />
+              <FaTwitter size={22} />
+            </a>
+            <a href="https://github.com/aimelive" target="_blank">
+              <FaGithub size={22} />
             </a>
             <a href="/#">
-              <img src={testimony} alt="Facebbok" className="h-8" />
+              <FaGoogle size={22} />
             </a>
             <a href="/#">
-              <img src={testimony} alt="Facebbok" className="h-8" />
+              <FaFacebook size={22} />
             </a>
             <a href="/#">
-              <img src={testimony} alt="Facebbok" className="h-8" />
-            </a>
-            <a href="/#">
-              <img src={testimony} alt="Facebbok" className="h-8" />
+              <FaInstagram size={22} />
             </a>
           </div>
         </div>

@@ -1,3 +1,5 @@
+import logo from "../../assets/images/logo.png";
+
 const Header = () => {
   const handleClickMenu = () => {
     const btn = document.getElementById("menu-btn");
@@ -8,9 +10,9 @@ const Header = () => {
   };
   return (
     <header>
-      <div className="flex justify-between p-6 items-center container mx-auto md:w-4/5">
-        <div className="text-xl font-semibold text-primary cursor-pointer">
-          <h1>AimeliveLogo</h1>
+      <div className="flex justify-between p-6 items-center md:px-16">
+        <div className="cursor-pointer">
+          <img src={logo} alt="Aimelive Logo" className="w-60" />
         </div>
         <nav>
           <ul className="hidden md:flex space-x-6">
@@ -27,12 +29,12 @@ const Header = () => {
 
             <li>
               <a href="/#" className="hover:text-primary">
-                Projects
+                Portfolio
               </a>
             </li>
             <li>
               <a href="/#" className="hover:text-primary">
-                Testimonials
+                Blog
               </a>
             </li>
             <li>
@@ -44,7 +46,8 @@ const Header = () => {
         </nav>
         <div className="hidden md:block">
           <a
-            href="/#"
+            href="mailto:aimendayambaje24@gmail.com"
+            target="_blank"
             className="text-sm capitalize text-white bg-primary px-6 py-2 shadow rounded-full self-baseline hover:bg-blue-400"
           >
             Get Started

@@ -1,4 +1,4 @@
-import photo from "../assets/images/aime.png";
+import photo from "../../assets/images/aime.png";
 
 const Welcome = () => {
   const years = new Date().getFullYear() - 2021;
@@ -18,18 +18,22 @@ const Welcome = () => {
             <br />
             with {years}+ years of working experience
           </h1>
+
           <p className="text-sm italic max-w-sm text-slate-400 text-center md:text-left">
-            "Don't hesitate to contact me if you need a very motivated full-stack web and mobile developer."
+            "Don't hesitate to contact me if you need a very motivated
+            full-stack web or mobile developer."
           </p>
           <div className="flex space-x-4 justify-center md:justify-start">
             <a
-              href="/#"
+              href="mailto:aimendayambaje24@gmail.com"
+              target="_blank"
               className="text-xs text-white bg-primary px-4 py-2 shadow rounded-full hover:bg-blue-400"
             >
               Get Started
             </a>
             <a
-              href="/#"
+              href="https://docs.google.com/document/d/1jQ9DU86IIUbpYUVAGcl4Oc3M3EsdQHCy5Mzk2jatR78/edit?usp=sharing"
+              target="_blank"
               className="text-xs text-white bg-primary px-4 py-2 shadow rounded-full hover:bg-blue-400"
             >
               View CV

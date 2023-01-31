@@ -48,6 +48,7 @@ const Header = () => {
           <a
             href="mailto:aimendayambaje24@gmail.com"
             target="_blank"
+            rel="noreferrer"
             className="text-sm capitalize text-white bg-primary px-6 py-2 shadow rounded-full self-baseline hover:bg-blue-400"
           >
             Get Started

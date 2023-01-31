@@ -27,6 +27,7 @@ const Welcome = () => {
             <a
               href="mailto:aimendayambaje24@gmail.com"
               target="_blank"
+              rel="noreferrer"
               className="text-xs text-white bg-primary px-4 py-2 shadow rounded-full hover:bg-blue-400"
             >
               Get Started
@@ -34,6 +35,7 @@ const Welcome = () => {
             <a
               href="https://docs.google.com/document/d/1jQ9DU86IIUbpYUVAGcl4Oc3M3EsdQHCy5Mzk2jatR78/edit?usp=sharing"
               target="_blank"
+              rel="noreferrer"
               className="text-xs text-white bg-primary px-4 py-2 shadow rounded-full hover:bg-blue-400"
             >
               View CV

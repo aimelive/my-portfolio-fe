@@ -1,16 +1,10 @@
-import testimony from "../../assets/images/aime.png";
 import logo from "../../assets/images/logo_white.png";
 import {
   FaFacebook,
   FaGithub,
   FaGoogle,
   FaInstagram,
-  FaLinkedin,
-  FaLinkedinIn,
-  FaMeetup,
-  FaRProject,
   FaTwitter,
-  FaVoicemail,
 } from "react-icons/fa";
 
 const Footer = () => {
@@ -28,7 +22,11 @@ const Footer = () => {
             <a href="/#">
               <FaTwitter size={22} />
             </a>
-            <a href="https://github.com/aimelive" target="_blank">
+            <a
+              href="https://github.com/aimelive"
+              target="_blank"
+              rel="noreferrer"
+            >
               <FaGithub size={22} />
             </a>
             <a href="/#">

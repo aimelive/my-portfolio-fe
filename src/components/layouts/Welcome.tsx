@@ -25,18 +25,16 @@ const Welcome = () => {
           </p>
           <div className="flex space-x-4 justify-center md:justify-start">
             <a
-              href="mailto:aimendayambaje24@gmail.com"
-              target="_blank"
-              rel="noreferrer"
-              className="text-xs text-white bg-primary px-4 py-2 shadow rounded-full hover:bg-blue-400"
+              href="/#"
+              className="text-xs text-white bg-primary px-6 py-2 shadow rounded-full hover:bg-blue-400"
             >
-              Get Started
+              Hire Me
             </a>
             <a
-              href="https://docs.google.com/document/d/1jQ9DU86IIUbpYUVAGcl4Oc3M3EsdQHCy5Mzk2jatR78/edit?usp=sharing"
+              href="https://drive.google.com/file/d/1txa8il3V7DFI-TzN7KGUvfhm-EFOo_7w/view?usp=sharing"
               target="_blank"
               rel="noreferrer"
-              className="text-xs text-white bg-primary px-4 py-2 shadow rounded-full hover:bg-blue-400"
+              className="text-xs text-white bg-primary px-6 py-2 shadow rounded-full hover:bg-blue-400"
             >
               View CV
             </a>
@@ -46,7 +44,7 @@ const Welcome = () => {
           <img
             src={photo}
             alt="Aimelive"
-            className="h-64 -scale-x-100 md:h-96"
+            className="aime-photo h-64 -scale-x-100 md:h-96"
           />
         </div>
       </div>

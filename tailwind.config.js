@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       colors: {
         primary: "#4c6ebb",
+        lightPrimary: "#9fcdf5",
       },
       fontFamily: {
         default: "Nunito",

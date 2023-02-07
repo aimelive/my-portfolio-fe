@@ -6,8 +6,12 @@ import {
   FaInstagram,
   FaTwitter,
 } from "react-icons/fa";
+import React from "react";
 
 const Footer = () => {
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+  };
   return (
     <footer className="bg-primary">
       <div className="container flex flex-col-reverse justify-between px-6 py-10 mx-auto space-y-8 md:flex-row md:space-y-0 md:px-16">
@@ -19,23 +23,24 @@ const Footer = () => {
             <img src={logo} className="h-8" alt="Aimelive Logo" />
           </div>
           <div className="flex justify-center space-x-4 text-white">
-            <a href="/#">
+            <a href="/#" className="icon">
               <FaTwitter size={22} />
             </a>
             <a
               href="https://github.com/aimelive"
               target="_blank"
               rel="noreferrer"
+              className="icon"
             >
               <FaGithub size={22} />
             </a>
-            <a href="/#">
+            <a href="/#" className="icon">
               <FaGoogle size={22} />
             </a>
-            <a href="/#">
+            <a href="/#" className="icon">
               <FaFacebook size={22} />
             </a>
-            <a href="/#">
+            <a href="/#" className="icon">
               <FaInstagram size={22} />
             </a>
           </div>
@@ -68,7 +73,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="flex flex-col justify-between">
-          <form>
+          <form onSubmit={handleSubmit}>
             <div className="flex flex-x-3">
               <input
                 type="text"

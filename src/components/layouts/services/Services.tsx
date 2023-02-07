@@ -1,4 +1,4 @@
-import StackItem from "../StackItem";
+import StackItem from "./StackItem";
 
 const Services = () => {
   return (

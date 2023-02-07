@@ -12,9 +12,7 @@ const StackItem = (props: any) => {
       </div>
       <div>
         <h3 className="hidden mb-4 text-lg font-bold md:block">{title}</h3>
-        <p className="text-slate-400">
-          {desc}
-        </p>
+        <p className="text-slate-400">{desc}</p>
       </div>
     </div>
   );

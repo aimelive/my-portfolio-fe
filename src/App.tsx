@@ -1,23 +1,9 @@
-// import Blogs from "./components/layouts/Blogs";
-// import Contacts from "./components/layouts/Contacts";
-import Footer from "./components/layouts/Footer";
-import Header from "./components/layouts/Header";
-// import Projects from "./components/layouts/Projects";
-import Services from "./components/layouts/Services";
-import Testimonials from "./components/layouts/Testimonials";
-import Welcome from "./components/layouts/Welcome";
+import Home from "./components/pages/Home";
 
 function App() {
   return (
     <div className="App font-default">
-      <Header />
-      <Welcome />
-      <Services />
-      {/* <Blogs />
-      <Projects /> */}
-      <Testimonials />
-      {/* <Contacts /> */}
-      <Footer />
+      <Home />
     </div>
   );
 }

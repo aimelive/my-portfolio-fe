@@ -1,9 +1,12 @@
-import Home from "./components/pages/Home";
+import { BrowserRouter } from "react-router-dom";
+import AppRoutes from "./Routes";
 
 function App() {
   return (
     <div className="App font-default">
-      <Home />
+      <BrowserRouter>
+        <AppRoutes />
+      </BrowserRouter>
     </div>
   );
 }

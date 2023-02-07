@@ -5,13 +5,11 @@ import ScreenComponent from "./ScreenComponent";
 const Home = () => {
   const mapAllScreens = () => {
     return TOTAL_SCREENS.map((screen) => (
-      <div>
-        <ScreenComponent
-          name={screen.name}
-          component={screen.component}
-          key={screen.name}
-        />
-      </div>
+      <ScreenComponent
+        name={screen.name}
+        component={screen.component}
+        key={screen.name}
+      />
     ));
   };
 

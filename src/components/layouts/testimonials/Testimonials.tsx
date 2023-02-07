@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Testimony from "../../../types/testimony";
 import UserTestimony from "./Testimony";
 
@@ -35,7 +36,7 @@ const testimonials: Testimony[] = [
 const Testimonials = () => {
   return (
     <section id="testimonials">
-      <div className="max-6-xl px-5 lg:px-32 mx-auto mt-32 text-center">
+      <div className="max-6-xl px-5 lg:px-32 mx-auto mt-16 text-center">
         <h2 className="text-4xl font-bold text-center">Testimonials</h2>
         <div className="flex flex-col mt-24 md:flex-row md:space-x-6">
           {testimonials.map((testimony) => (
@@ -43,14 +44,12 @@ const Testimonials = () => {
           ))}
         </div>
         <div className="my-16">
-          <a
-            href="mailto:aimendayambaje24@gmail.com"
-            target="_blank"
-            rel="noreferrer"
+          <Link
+            to="#"
             className="text-xs text-white bg-primary px-4 py-2 shadow rounded-full hover:bg-blue-400"
           >
-            Get Started
-          </a>
+            Load More
+          </Link>
         </div>
       </div>
     </section>

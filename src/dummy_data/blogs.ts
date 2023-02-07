@@ -1,5 +1,7 @@
 import Blog from "../types/blog";
 
+
+
 export const blogs: Blog[] = [
   {
     id: "blog_id",
@@ -36,3 +38,14 @@ export const blogs: Blog[] = [
     tags: ["React", "TypeScript", "TailwindCSS", "Redux"],
   },
 ];
+
+export const getOneBlog = (slug?: string): Blog | null => {
+  try {
+   
+    return blogs.filter(
+      (blog) => blog.title.split(" ").join("-").toLowerCase() === slug
+    )[0];
+  } catch (error) {
+    return null;
+  }
+};

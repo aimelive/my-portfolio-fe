@@ -1,25 +1,24 @@
+import { Link } from "react-router-dom";
 import { blogs } from "../../../dummy_data/blogs";
-import SingleBlog from "./SingleBlog";
+import SingleBlogCard from "./SingleBlogCard";
 
 const Blogs = () => {
   return (
     <section id="blogs">
-      <div className="max-6-xl lg:px-32 mx-auto mt-32 text-center">
+      <div className="max-6-xl lg:px-32 mx-auto mt-16 text-center">
         <h2 className="text-4xl font-bold text-center">Recent Articles</h2>
         <div className="flex flex-col md:flex-row my-12 justify-between">
           {blogs.map((blog) => (
-            <SingleBlog {...blog} key={blog.id} />
+            <SingleBlogCard {...blog} key={blog.id} />
           ))}
         </div>
 
-        <a
-          href="/#"
-          target="_blank"
-          rel="noreferrer"
+        <Link
+          to="/#"
           className="text-xs text-white bg-primary px-4 py-2 shadow rounded-full hover:bg-blue-400"
         >
           Read More
-        </a>
+        </Link>
       </div>
     </section>
   );

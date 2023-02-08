@@ -1,6 +1,5 @@
 import React from "react";
 import photo from "../../assets/images/aime.png";
-import lamp from "../../assets/images/lamp.png";
 
 const Contacts = () => {
   const handleSend = (e: React.FormEvent) => {
@@ -17,7 +16,13 @@ const Contacts = () => {
       >
         <div className="flex flex-wrap justify-center gap-12 md:gap-6 lg:gap-20">
           <div className="md:flex-1 md:max-w-sm relative">
-            <img src={lamp} alt="Lamp" className="mx-auto" />
+            <img
+              src={
+                "https://cdn.pixabay.com/photo/2016/11/29/08/41/apple-1868496_1280.jpg"
+              }
+              alt="Lamp"
+              className="mx-auto"
+            />
             <a
               href="https://drive.google.com/u/0/uc?id=1txa8il3V7DFI-TzN7KGUvfhm-EFOo_7w&export=download"
               className="

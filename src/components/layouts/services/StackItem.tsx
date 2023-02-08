@@ -7,7 +7,7 @@ const StackItem = (props: any) => {
           <div className="px-4 py-2 text-white rounded-full md:py-1 bg-blue-200">
             0{num}
           </div>
-          <h3 className="text-base font-bold md:mb-4 md:hidden">{title}</h3>
+          <h3 className="text-base font-bold md:mb-4 md:hidden text-neutral-100 pl-3">{title}</h3>
         </div>
       </div>
       <div>

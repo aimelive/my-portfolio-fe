@@ -5,8 +5,8 @@ type Blog = {
   intro: string;
   body: string;
   tags: string[];
-  createdAt: Date;
-  updatedAt: Date | null;
+  createdAt: string;
+  updatedAt: string | null;
 };
 
 export default Blog;

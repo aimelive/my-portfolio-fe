@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import {
   FaArrowLeft,
   FaFacebook,
@@ -6,17 +7,31 @@ import {
   FaInstagram,
   FaTwitter,
 } from "react-icons/fa";
-import { Link, useParams } from "react-router-dom";
-import { getOneBlog } from "../../../dummy_data/blogs";
+import { useParams } from "react-router-dom";
+import { getOneBlog } from "../../../data/blogs";
 import Blog from "../../../types/blog";
+import { useNavigate } from "react-router-dom";
+import { blogVariants } from "../../../utils/variants";
 
 const BlogPage = () => {
+  const navigate = useNavigate();
+
+  const handleGoBack = () => {
+    navigate(-1);
+  };
+
   const blog: Blog | null = getOneBlog(useParams().slug);
   return (
-    <div className="bg-white p-8 m-10 mx-auto w-5/6 shadow-xl rounded-md text-center">
-      <Link to="/">
+    <motion.div
+      variants={blogVariants}
+      animate="visible"
+      initial="hidden"
+      exit="exit"
+      className="bg-white p-8 m-10 mx-auto w-5/6 shadow-xl rounded-md text-center"
+    >
+      <button onClick={handleGoBack} className="block">
         <FaArrowLeft className="text-gray-400 hover:text-primary hover:scale-110 duration-300 text-lg " />
-      </Link>
+      </button>
       <h1 className="my-2 text-2xl font-bold">{blog?.title}</h1>
       <img
         src={blog?.img}
@@ -57,7 +72,7 @@ const BlogPage = () => {
           <FaInstagram size={22} />
         </a>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

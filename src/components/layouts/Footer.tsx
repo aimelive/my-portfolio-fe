@@ -7,6 +7,7 @@ import {
   FaTwitter,
 } from "react-icons/fa";
 import React from "react";
+import { switchScreen } from "../../utils/screenUtils";
 
 const Footer = () => {
   const handleSubmit = (e: React.FormEvent) => {
@@ -47,28 +48,56 @@ const Footer = () => {
         </div>
         <div className="flex justify-around space-x-32">
           <div className="flex flex-col space-y-3 text-white">
-            <a href="/#" className="hover:text-slate-400">
+            <a
+              href="/#"
+              onClick={(e) => switchScreen(e, "WELCOME")}
+              className="hover:text-slate-400"
+            >
               Home
             </a>
-            <a href="/#" className="hover:text-slate-400">
-              Contacts
+            <a
+              href="/#"
+              onClick={(e) => switchScreen(e, "CONTACT")}
+              className="hover:text-slate-400"
+            >
+              Contact
             </a>
-            <a href="/#" className="hover:text-slate-400">
-              Products
+            <a
+              onClick={(e) => switchScreen(e, "PROJECTS")}
+              href="/#"
+              className="hover:text-slate-400"
+            >
+              Projects
             </a>
-            <a href="/#" className="hover:text-slate-400">
+            <a
+              href="/#"
+              onClick={(e) => switchScreen(e, "SERVICES")}
+              className="hover:text-slate-400"
+            >
               Services
             </a>
           </div>
           <div className="flex flex-col space-y-3 text-white">
-            <a href="/#" className="hover:text-slate-400">
-              Blog
+            <a
+              href="/#"
+              onClick={(e) => switchScreen(e, "BLOGS")}
+              className="hover:text-slate-400"
+            >
+              Blogs
             </a>
-            <a href="/#" className="hover:text-slate-400">
+            <a
+              href="/#"
+              onClick={(e) => switchScreen(e, "SERVICES")}
+              className="hover:text-slate-400"
+            >
               About
             </a>
-            <a href="/#" className="hover:text-slate-400">
-              Projects
+            <a
+              href="/#"
+              onClick={(e) => switchScreen(e, "TESTIMONIALS")}
+              className="hover:text-slate-400"
+            >
+              Testimonials
             </a>
           </div>
         </div>

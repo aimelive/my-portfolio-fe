@@ -1,14 +1,7 @@
 import logo from "../../assets/images/logo.png";
+import { switchScreen } from "../../utils/screenUtils";
 
 const Header = () => {
-  const switchScreen = (e: React.MouseEvent, screen: any) => {
-    e.preventDefault();
-    console.log("we are here");
-    let screenComponent = document.getElementById(screen.name);
-    if (!screenComponent) return;
-
-    screenComponent.scrollIntoView({ behavior: "smooth" });
-  };
   const menuItems: { id: string; spanText: string }[] = [
     {
       id: "WELCOME",
@@ -52,9 +45,7 @@ const Header = () => {
                 <li key={item.spanText}>
                   <span
                     className="menu-a"
-                    onClick={(e) =>
-                      switchScreen(e, { name: `SCREEN_${item.id}` })
-                    }
+                    onClick={(e) => switchScreen(e, item.id)}
                   >
                     {item.spanText}
                   </span>
@@ -66,7 +57,7 @@ const Header = () => {
         <div className="hidden md:block">
           <a
             href="/#"
-            onClick={(e) => switchScreen(e, { name: `SCREEN_CONTACT` })}
+            onClick={(e) => switchScreen(e, "CONTACT")}
             className="text-sm capitalize text-white bg-primary px-6 py-2 shadow rounded-full self-baseline hover:bg-blue-400"
           >
             Hire Me
@@ -90,7 +81,7 @@ const Header = () => {
               <a
                 href="/#"
                 key={item.spanText}
-                onClick={(e) => switchScreen(e, { name: `SCREEN_${item.id}` })}
+                onClick={(e) => switchScreen(e, item.id)}
               >
                 {item.spanText}
               </a>

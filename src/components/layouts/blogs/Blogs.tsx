@@ -1,8 +1,12 @@
 import { Link } from "react-router-dom";
-import { blogs } from "../../../dummy_data/blogs";
+import { useAppDispatch, useAppSelector } from "../../../redux/hooks";
+// import { increment } from "../../../redux/reducers/blogsReducer";
 import SingleBlogCard from "./SingleBlogCard";
 
 const Blogs = () => {
+  const { blogs } = useAppSelector((state) => state.blogs);
+  // const dispatch = useAppDispatch();
+
   return (
     <section id="blogs">
       <div className="max-6-xl lg:px-32 mx-auto mt-16 text-center">
@@ -17,7 +21,7 @@ const Blogs = () => {
           to="/#"
           className="text-xs text-white bg-primary px-4 py-2 shadow rounded-full hover:bg-blue-400"
         >
-          Read More
+          Read More ({blogs.length}+)
         </Link>
       </div>
     </section>

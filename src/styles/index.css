@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 body {
-  background-image: url("../../public/bg-pattern.svg");
+  background-image: url("../../bg-pattern.svg");
   background-repeat: no-repeat;
   background-size: 800px;
   background-position: 90% -28%;

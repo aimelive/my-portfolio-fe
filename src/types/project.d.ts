@@ -1,4 +1,4 @@
-import { ProjectPlatform } from "../dummy_data/projects";
+import { ProjectPlatform } from "../data/projects";
 
 type Platform = {
   type: ProjectPlatform;

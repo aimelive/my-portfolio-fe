@@ -1,4 +1,5 @@
 import photo from "../../assets/images/aime.png";
+import { switchScreen } from "../../utils/screenUtils";
 
 const Welcome = () => {
   const years = new Date().getFullYear() - 2021;
@@ -26,6 +27,7 @@ const Welcome = () => {
           <div className="flex space-x-4 justify-center md:justify-start">
             <a
               href="/#"
+              onClick={(e) => switchScreen(e, "CONTACT")}
               className="text-xs text-white bg-primary px-6 py-2 shadow rounded-full hover:bg-blue-400"
             >
               Hire Me

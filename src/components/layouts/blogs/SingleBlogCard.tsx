@@ -1,9 +1,13 @@
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import Blog from "../../../types/blog";
 
 const SingleBlogCard = (blog: Blog) => {
   return (
-    <div className="mx-12 my-4 md:m-4 bg-gray-200 rounded-lg overflow-hidden shadow-md shadow-gray-100 hover:shadow-xl">
+    <motion.div
+      exit={{ opacity: 0 }}
+      className="mx-12 my-4 md:m-4 bg-gray-200 rounded-lg overflow-hidden shadow-md shadow-gray-100 hover:shadow-xl"
+    >
       <img
         src={blog.img}
         alt={blog.title}
@@ -25,7 +29,7 @@ const SingleBlogCard = (blog: Blog) => {
           </span>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 };
 

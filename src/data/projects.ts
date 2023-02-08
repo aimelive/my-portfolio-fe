@@ -16,7 +16,7 @@ platformsMap.set(ProjectPlatform.website, "Website");
 platformsMap.set(ProjectPlatform.demo, "Demo");
 
 export const platformsIcon = new Map<ProjectPlatform, JSX.Element>();
-const props = { className: "mx-4" };
+const props = { className: "mx-4 sm:mr-2" };
 platformsIcon.set(ProjectPlatform.github, FaGithub(props));
 platformsIcon.set(ProjectPlatform.playstore, FaGooglePlay(props));
 platformsIcon.set(ProjectPlatform.website, FaIntercom(props));

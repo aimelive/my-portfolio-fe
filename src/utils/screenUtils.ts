@@ -41,3 +41,12 @@ export const TOTAL_SCREENS: {
   },
 ];
 
+export const switchScreen = (e: React.MouseEvent, screen: string) => {
+  e.preventDefault();
+  
+  let screenComponent = document.getElementById(`SCREEN_${screen}`);
+  if (!screenComponent) return;
+
+  screenComponent.scrollIntoView({ behavior: "smooth" });
+};
+

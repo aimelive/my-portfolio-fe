@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import { FaStar } from "react-icons/fa";
-import { platformsIcon, platformsMap } from "../../../dummy_data/projects";
+import { platformsIcon, platformsMap } from "../../../data/projects";
 import Project from "../../../types/project";
 
 const ProjectGrid = (project: Project) => {

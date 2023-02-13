@@ -1,9 +1,9 @@
 type Testimony = {
   id: string;
-  name: string;
-  description: string;
+  username: string;
+  message: string;
   link: string;
   imgUrl: string;
-  hidden: boolean
+  createdAt: string
 };
 export default Testimony;

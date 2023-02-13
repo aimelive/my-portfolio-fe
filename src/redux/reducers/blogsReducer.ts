@@ -1,30 +1,43 @@
 import { createSlice } from "@reduxjs/toolkit";
-import type { PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../store";
 import Blog from "../../types/blog";
-import { blogs } from "../../data/blogs";
+import { fetchAllBlogs } from "../thunks/blogThunks";
+import FetchError from "../../types/error";
 
-interface BlogsState {
+export interface BlogsState {
   blogs: Blog[];
+  loading: "idle" | "pending" | "succeeded" | "failed";
+  error: FetchError | null;
 }
 
 const initialState: BlogsState = {
-  blogs: blogs,
-};
+  blogs: [],
+  loading: "idle",
+  error: null,
+} as BlogsState;
 
 export const blogsSlice = createSlice({
   name: "blogs",
   initialState,
   reducers: {
-    //Get all blog action but for now is not used
-    getBlogs: (state, action: PayloadAction<number>) => {
-      const limit = action.payload;
-      state.blogs = [...state.blogs];
+    setIsLoading: (state) => {
+      state.loading = "idle";
     },
+  },
+  extraReducers(builder) {
+    builder.addCase(fetchAllBlogs.fulfilled, (state, action) => {
+      const { blogs, error, loading } = action.payload;
+
+      if (loading === "succeeded" && blogs.length !== 0) {
+        state.blogs = blogs;
+      }
+      state.loading = loading;
+      state.error = error;
+    });
   },
 });
 
-export const { getBlogs } = blogsSlice.actions;
+export const { setIsLoading } = blogsSlice.actions;
 
 export const selectBlogs = (state: RootState) => state;
 

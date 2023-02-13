@@ -1,5 +1,6 @@
 import { AnimatePresence } from "framer-motion";
 import { Route, Routes, useLocation } from "react-router-dom";
+import AllBlogsPage from "./components/layouts/blogs/AllBlogs";
 import BlogPage from "./components/layouts/blogs/ReadOneBlog";
 import Home from "./components/pages/Home";
 import NotFound from "./components/pages/NotFound";
@@ -11,6 +12,7 @@ const AppRoutes = () => {
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.key}>
         <Route path="/" element={<Home />} />
+        <Route path="/blogs" element={<AllBlogsPage />} />
         <Route path="/blogs/:slug" element={<BlogPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

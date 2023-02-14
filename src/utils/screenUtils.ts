@@ -1,5 +1,5 @@
 import Blogs from "../components/layouts/blogs/Blogs";
-import Contacts from "../components/layouts/Contacts";
+import Contacts from "../components/layouts/contacts/Contacts";
 import Footer from "../components/layouts/Footer";
 import Projects from "../components/layouts/projects/Projects";
 import Services from "../components/layouts/services/Services";

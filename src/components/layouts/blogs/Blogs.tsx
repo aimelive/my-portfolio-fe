@@ -1,14 +1,13 @@
 import { useEffect } from "react";
-import { FaUndo } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../../redux/hooks";
 import { fetchAllBlogs } from "../../../redux/thunks/blogThunks";
-import { ShimmerPostItem } from "react-shimmer-effects";
 
 import Blog from "../../../types/blog";
 import SingleBlogCard from "./SingleBlogCard";
 import { setIsLoading } from "../../../redux/reducers/blogsReducer";
 import CardError from "../../reusable/CardError";
+import GridsShimmer from "../../reusable/GridsShimmer";
 
 const Blogs = () => {
   const { blogs, error, loading } = useAppSelector((state) => state.blogs);
@@ -29,23 +28,14 @@ const Blogs = () => {
       <div className="max-6-xl lg:px-32 mx-auto mt-16 text-center">
         <h2 className="text-4xl font-bold text-center">Recent Articles</h2>
         {loading === "succeeded" || loading === "failed" ? null : (
-          <div className="grid  my-12 grid-cols-1 space-x-1 md:grid-cols-3">
-            <div className="px-12 md:px-4 py-2">
-              <ShimmerPostItem card title text cta />
-            </div>
-            <div className="px-4 py-2 hidden md:block">
-              <ShimmerPostItem card title text cta />
-            </div>
-            <div className="px-4 py-2 hidden md:block">
-              <ShimmerPostItem card title text cta />
-            </div>
-          </div>
+          <GridsShimmer />
         )}
 
         {error && loading === "failed" && blogs.length == 0 ? (
           <CardError
             message={error.message}
             status={error.status}
+            item="blogs"
             onClick={() => {
               dispatch(setIsLoading());
               dispatch(fetchAllBlogs());

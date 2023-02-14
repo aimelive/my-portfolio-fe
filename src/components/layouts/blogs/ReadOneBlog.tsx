@@ -1,12 +1,5 @@
 import { motion } from "framer-motion";
-import {
-  FaArrowLeft,
-  FaFacebook,
-  FaGithub,
-  FaGoogle,
-  FaInstagram,
-  FaTwitter,
-} from "react-icons/fa";
+import { FaArrowLeft } from "react-icons/fa";
 import { useParams } from "react-router-dom";
 import Blog from "../../../types/blog";
 import { useNavigate } from "react-router-dom";
@@ -16,6 +9,7 @@ import { GET_BLOG_BY_SLUG } from "../../../redux/thunks/gql/blogsQueries";
 import { ShimmerPostDetails } from "react-shimmer-effects";
 import CardError from "../../reusable/CardError";
 import moment from "moment";
+import SocialMediasConnect from "../../reusable/SocialMediasConnect";
 
 const BlogPage = () => {
   const { slug } = useParams();
@@ -55,6 +49,7 @@ const BlogPage = () => {
         <CardError
           message={error.message}
           status={400}
+          item="this blog"
           onClick={() => {
             console.log("We couldn't try again!");
           }}
@@ -80,29 +75,7 @@ const BlogPage = () => {
         </>
       )}
 
-      <p className="italic text-sm text-gray-500 my-4">Let's connect!</p>
-      <div className="flex justify-center space-x-4 text-primary">
-        <a href="/#" className="icon hover:text-lightPrimary">
-          <FaTwitter size={22} />
-        </a>
-        <a
-          href="https://github.com/aimelive"
-          target="_blank"
-          rel="noreferrer"
-          className="icon hover:text-lightPrimary"
-        >
-          <FaGithub size={22} />
-        </a>
-        <a href="/#" className="icon hover:text-lightPrimary">
-          <FaGoogle size={22} />
-        </a>
-        <a href="/#" className="icon hover:text-lightPrimary">
-          <FaFacebook size={22} />
-        </a>
-        <a href="/#" className="icon hover:text-lightPrimary">
-          <FaInstagram size={22} />
-        </a>
-      </div>
+      <SocialMediasConnect />
     </motion.div>
   );
 };

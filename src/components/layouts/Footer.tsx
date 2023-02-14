@@ -6,12 +6,22 @@ import {
   FaInstagram,
   FaTwitter,
 } from "react-icons/fa";
-import React from "react";
+import React, { useState } from "react";
 import { switchScreen } from "../../utils/screenUtils";
+import { Validate } from "../../helpers/validations";
 
 const Footer = () => {
+  const [error, setError] = useState<string>();
+  const [email, setEmail] = useState<string>("");
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (new Validate(email).email() !== true) {
+      setError(new Validate(email).email().toString());
+      return;
+    }
+
+    setError("This feature is not implemented yet");
   };
   return (
     <footer className="bg-primary">
@@ -103,11 +113,14 @@ const Footer = () => {
         </div>
         <div className="flex flex-col justify-between">
           <form onSubmit={handleSubmit}>
+            <p className="text-sm text-white">{error}</p>
             <div className="flex flex-x-3">
               <input
                 type="text"
                 className="flex-1 px-4 rounded-full focus:outline-none"
                 placeholder="Updates in your inbox"
+                onChange={(e) => setEmail(e.target.value)}
+                value={email}
               />
               <button className="px-6 py-2 text-white bg-slate-400 hover:bg-slate-300 focus:outline-none rounded-full">
                 Go

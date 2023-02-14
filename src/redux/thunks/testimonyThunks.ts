@@ -5,7 +5,7 @@ import { TestimonialsState } from "../reducers/testimonialsReducer";
 import * as queries from "./gql/testimonialQueries";
 
 export const fetchAllTestimonials = createAsyncThunk(
-  "blogs/fetchAllTestimonials",
+  "testimonials/fetchAllTestimonials",
   async (thunkAPI) => {
     try {
       const data = await client.query({

@@ -20,7 +20,7 @@ export const testimonialsSlice = createSlice({
   name: "testimonials",
   initialState,
   reducers: {
-    setIsLoading: (state) => {
+    setIsLoadingTestimonial: (state) => {
       state.loading = "idle";
     },
   },
@@ -37,7 +37,7 @@ export const testimonialsSlice = createSlice({
   },
 });
 
-export const { setIsLoading } = testimonialsSlice.actions;
+export const { setIsLoadingTestimonial } = testimonialsSlice.actions;
 
 export const selectTestimonials = (state: RootState) => state;
 

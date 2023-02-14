@@ -1,10 +1,10 @@
 type Blog = {
   id: string;
-  img: string;
+  imgUrl: string;
   title: string;
   intro: string;
-  body: string;
-  tags: string[];
+  tags: string;
+  slug: string;
   createdAt: string;
   updatedAt: string | null;
 };

@@ -1,26 +1,37 @@
 import { motion } from "framer-motion";
-import {
-  FaArrowLeft,
-  FaFacebook,
-  FaGithub,
-  FaGoogle,
-  FaInstagram,
-  FaTwitter,
-} from "react-icons/fa";
+import { FaArrowLeft } from "react-icons/fa";
 import { useParams } from "react-router-dom";
-import { getOneBlog } from "../../../data/blogs";
 import Blog from "../../../types/blog";
 import { useNavigate } from "react-router-dom";
 import { blogVariants } from "../../../utils/variants";
+import { useQuery } from "@apollo/client";
+import { GET_BLOG_BY_SLUG } from "../../../redux/thunks/gql/blogsQueries";
+import { ShimmerPostDetails } from "react-shimmer-effects";
+import CardError from "../../reusable/CardError";
+import moment from "moment";
+import SocialMediasConnect from "../../reusable/SocialMediasConnect";
 
 const BlogPage = () => {
+  const { slug } = useParams();
+
+  const { loading, error, data } = useQuery(GET_BLOG_BY_SLUG, {
+    variables: { slug },
+  });
+
   const navigate = useNavigate();
 
   const handleGoBack = () => {
-    navigate(-1);
+    navigate("/");
   };
 
-  const blog: Blog | null = getOneBlog(useParams().slug);
+  let blog: Blog | null;
+  let body: string;
+
+  if (data) {
+    blog = data.getBlogBySlug;
+    body = data.getBlogBySlug.body;
+  }
+
   return (
     <motion.div
       variants={blogVariants}
@@ -32,46 +43,39 @@ const BlogPage = () => {
       <button onClick={handleGoBack} className="block">
         <FaArrowLeft className="text-gray-400 hover:text-primary hover:scale-110 duration-300 text-lg " />
       </button>
-      <h1 className="my-2 text-2xl font-bold">{blog?.title}</h1>
-      <img
-        src={blog?.img}
-        alt={blog?.title}
-        className="h-96 object-contain mx-auto"
-      />
-      <p className="italic text-sm text-gray-500 my-4">
-        "{blog?.intro}" ~{" "}
-        {<span className="text-slate-700">published 2 days ago</span>}
-      </p>
-      <p className="py-4 md:text-justify md:px-12">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam nam
-        in culpa voluptatibus doloribus, aliquid perspiciatis magnam. Magni
-        maxime nisi harum voluptas est vitae, reprehenderit impedit libero
-        eligendi iusto quaerat.
-      </p>
 
-      <p className="italic text-sm text-gray-500 my-4">Let's connect!</p>
-      <div className="flex justify-center space-x-4 text-primary">
-        <a href="/#" className="icon hover:text-lightPrimary">
-          <FaTwitter size={22} />
-        </a>
-        <a
-          href="https://github.com/aimelive"
-          target="_blank"
-          rel="noreferrer"
-          className="icon hover:text-lightPrimary"
-        >
-          <FaGithub size={22} />
-        </a>
-        <a href="/#" className="icon hover:text-lightPrimary">
-          <FaGoogle size={22} />
-        </a>
-        <a href="/#" className="icon hover:text-lightPrimary">
-          <FaFacebook size={22} />
-        </a>
-        <a href="/#" className="icon hover:text-lightPrimary">
-          <FaInstagram size={22} />
-        </a>
-      </div>
+      {loading && <ShimmerPostDetails card cta variant="EDITOR" />}
+      {error && (
+        <CardError
+          message={error.message}
+          status={400}
+          item="this blog"
+          onClick={() => {
+            console.log("We couldn't try again!");
+          }}
+        />
+      )}
+      {data && (
+        <>
+          <h1 className="my-2 text-2xl font-bold">{blog!.title}</h1>
+          <img
+            src={blog!.imgUrl}
+            alt={blog!.title}
+            className="h-96 object-contain mx-auto"
+          />
+          <p className="italic text-sm text-gray-500 my-4">
+            "{blog!.intro}" ~{" "}
+            {
+              <span className="text-slate-700">
+                published {moment(Number(blog!.createdAt)).fromNow()}
+              </span>
+            }
+          </p>
+          <p className="py-4 md:text-justify md:px-12">{body!}</p>
+        </>
+      )}
+
+      <SocialMediasConnect />
     </motion.div>
   );
 };

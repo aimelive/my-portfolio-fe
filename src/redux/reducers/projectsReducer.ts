@@ -1,25 +1,44 @@
 import { createSlice } from "@reduxjs/toolkit";
-// import type { PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../store";
 import Project from "../../types/project";
-import { projects } from "../../data/projects";
+import FetchError from "../../types/error";
+import { fetchAllProjects } from "../thunks/projectThunks";
 
-interface PorjectsState {
+export interface ProjectsState {
   projects: Project[];
+  loading: "idle" | "pending" | "succeeded" | "failed";
+  error: FetchError | null;
 }
 
-const initialState: PorjectsState = {
-  projects: projects,
+const initialState: ProjectsState = {
+  projects: [],
+  loading: "idle",
+  error: null,
 };
 
 export const projectsSlice = createSlice({
   name: "projects",
   initialState,
-  reducers: {},
+  reducers: {
+    setIsLoadingProjects: (state) => {
+      state.loading = "idle";
+    },
+  },
+  extraReducers(builder) {
+    builder.addCase(fetchAllProjects.fulfilled, (state, action) => {
+      const { projects, error, loading } = action.payload;
+
+      if (loading === "succeeded" && projects.length !== 0) {
+        state.projects = projects;
+      }
+      state.loading = loading;
+      state.error = error;
+    });
+  },
 });
 
-// export const { getprojects } = projectsSlice.actions;
+export const { setIsLoadingProjects } = projectsSlice.actions;
 
-export const selectprojects = (state: RootState) => state;
+export const selectProjects = (state: RootState) => state;
 
 export default projectsSlice.reducer;

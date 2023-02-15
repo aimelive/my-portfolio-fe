@@ -27,7 +27,7 @@ const BlogPage = () => {
   let blog: Blog | null;
   let body: string;
 
-  if (data) {
+  if (data && data.getBlogBySlug) {
     blog = data.getBlogBySlug;
     body = data.getBlogBySlug.body;
   }
@@ -55,7 +55,8 @@ const BlogPage = () => {
           }}
         />
       )}
-      {data && (
+
+      {data && data.getBlogBySlug && (
         <>
           <h1 className="my-2 text-2xl font-bold">{blog!.title}</h1>
           <img

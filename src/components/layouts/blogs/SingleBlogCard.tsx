@@ -17,9 +17,7 @@ const SingleBlogCard = (blog: Blog) => {
       />
       <div className="px-4 py-2 pb-4 text-left">
         <h5 className="text-lg font-bold text-left text-primary hover:text-lightPrimary">
-          <Link to={`/blogs/${blog.title.split(" ").join("-").toLowerCase()}`}>
-            {blog.title}
-          </Link>
+          <Link to={`/blogs/${blog.slug}`}>{blog.title}</Link>
         </h5>
         <p className="text-xs flex text-slate-400 italic">{date}</p>
         {blog.tags.split(", ").map((tag) => (

@@ -42,7 +42,7 @@ const Blogs = () => {
             }}
           />
         ) : (
-          <div className="flex flex-col md:flex-row my-12 justify-between">
+          <div className="my-12 grid grid-cols-none sm:grid-cols-2 md:grid-cols-3">
             {blogsA.slice(0, 3).map((blog, index) => (
               <SingleBlogCard {...blog} key={blog.id} />
             ))}

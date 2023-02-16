@@ -24,7 +24,7 @@ const Welcome = () => {
             "Don't hesitate to contact me if you need a very motivated
             full-stack web or mobile developer."
           </p>
-          <div className="flex space-x-4 justify-center md:justify-start">
+          <div className="flex space-x-4 justify-center">
             <a
               href="/#"
               onClick={(e) => switchScreen(e, "CONTACT")}

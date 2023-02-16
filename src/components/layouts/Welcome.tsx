@@ -6,8 +6,8 @@ const Welcome = () => {
   return (
     <section id="welcome">
       <div className="flex justify-evenly flex-col-reverse items-center space-x-4 md:flex-row mx-auto mt-6">
-        <div className="flex flex-col space-y-10 mb-16 mt-8 font-semibold text-center px-4 md:text-left md:text-3xl">
-          <h1 className="text-2xl md:text-4xl">
+        <div className="flex flex-col space-y-10 mb-16 mt-8 font-semibold px-4">
+          <h1 className="text-center text-2xl md:text-4xl md:text-left">
             Hi everyone,
             <br />
             My name is
@@ -24,7 +24,7 @@ const Welcome = () => {
             "Don't hesitate to contact me if you need a very motivated
             full-stack web or mobile developer."
           </p>
-          <div className="flex space-x-4 justify-center">
+          <div className="flex space-x-4 justify-center md:justify-start">
             <a
               href="/#"
               onClick={(e) => switchScreen(e, "CONTACT")}

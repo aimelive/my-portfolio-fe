@@ -7,7 +7,7 @@ const Welcome = () => {
     <section id="welcome">
       <div className="flex justify-evenly flex-col-reverse items-center space-x-4 md:flex-row mx-auto mt-6">
         <div className="flex flex-col space-y-10 mb-16 mt-8 font-semibold px-4">
-          <h1 className="text-center text-2xl md:text-4xl md:text-left">
+          <h1 className="text-left text-2xl md:text-4xl">
             Hi everyone,
             <br />
             My name is
@@ -20,7 +20,7 @@ const Welcome = () => {
             with {years}+ years of working experience
           </h1>
 
-          <p className="text-sm italic max-w-sm text-slate-400 text-center md:text-left">
+          <p className="text-sm italic max-w-sm text-slate-400 text-left">
             "Don't hesitate to contact me if you need a very motivated
             full-stack web or mobile developer."
           </p>

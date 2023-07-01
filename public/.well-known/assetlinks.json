@@ -3,9 +3,9 @@
     "relation": ["delegate_permission/common.handle_all_urls"],
     "target": {
       "namespace": "android_app",
-      "package_name": "com.example.deeplinkapp",
+      "package_name": "com.obfbook.mobile",
       "sha256_cert_fingerprints": [
-        "29:8C:04:2B:1C:A6:E3:E1:DE:F0:09:8B:AE:D1:78:C1:54:1F:08:A7:6B:D6:8E:00:EF:DE:6B:BF:9E:9D:0E:B5"
+        "57:84:67:BB:85:7D:FD:6E:03:19:54:49:C8:E8:09:CD:84:06:4F:4F:9F:14:8C:EF:6F:60:C6:87:11:8D:E7:D5"
       ]
     }
   }
